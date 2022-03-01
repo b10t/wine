@@ -160,23 +160,23 @@
                             </p>
                         </div>
                     </di>
-                    
+                    {% for drink_category in drinks %}
                     <di class="row">
                         <div class="col-12 section-title text-center mb-5">
-                            <h2 class="d-block">Белые вина</h2>
+                            <h2 class="d-block">{{drink_category}}</h2>
                         </div>
                     </di>
 
                     <div class="row">
-                        
+                        {% for drink in drinks[drink_category] %}
                         <div class="col-lg-4 mb-5 col-md-6">
                             <div class="wine_v_1 text-center pb-4 pt-5">
                                 <img
-                                    src="images/belaya_ledi.png"
+                                    src="images/{{drink.Картинка}}"
                                     alt="Image"
                                     class="img-fluid"
                                 />
-                                
+                                {% if drink.Акция %}
                                 <img
                                     src="assets/profitable.png"
                                     style="
@@ -187,254 +187,27 @@
                                         top: -20px;
                                     "
                                 />
-                                
+                                {% endif %}
 
                                 <div>
                                     <h3 class="heading mt-3 mb-3 text-dark">
-                                        Белая леди
+                                        {{drink.Название}}
                                     </h3>
                                     <p>
-                                         Дамский пальчик<br />
-                                        
+                                        {% if drink.Сорт %}
+                                            {{drink.Сорт}}<br />
+                                        {% endif %}
 
                                         <span class="price"
-                                            >399 р.</span
+                                            >{{drink.Цена}} р.</span
                                         >
                                     </p>
                                 </div>
                             </div>
                         </div>
-                        
-                        <div class="col-lg-4 mb-5 col-md-6">
-                            <div class="wine_v_1 text-center pb-4 pt-5">
-                                <img
-                                    src="images/rkaciteli.png"
-                                    alt="Image"
-                                    class="img-fluid"
-                                />
-                                
-
-                                <div>
-                                    <h3 class="heading mt-3 mb-3 text-dark">
-                                        Ркацители
-                                    </h3>
-                                    <p>
-                                         Ркацители<br />
-                                        
-
-                                        <span class="price"
-                                            >499 р.</span
-                                        >
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="col-lg-4 mb-5 col-md-6">
-                            <div class="wine_v_1 text-center pb-4 pt-5">
-                                <img
-                                    src="images/kokur.png"
-                                    alt="Image"
-                                    class="img-fluid"
-                                />
-                                
-
-                                <div>
-                                    <h3 class="heading mt-3 mb-3 text-dark">
-                                        Кокур
-                                    </h3>
-                                    <p>
-                                         Кокур<br />
-                                        
-
-                                        <span class="price"
-                                            >450 р.</span
-                                        >
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                        
+                        {% endfor %}
                     </div>
-                    
-                    <di class="row">
-                        <div class="col-12 section-title text-center mb-5">
-                            <h2 class="d-block">Напитки</h2>
-                        </div>
-                    </di>
-
-                    <div class="row">
-                        
-                        <div class="col-lg-4 mb-5 col-md-6">
-                            <div class="wine_v_1 text-center pb-4 pt-5">
-                                <img
-                                    src="images/konyak_klassicheskyi.png"
-                                    alt="Image"
-                                    class="img-fluid"
-                                />
-                                
-
-                                <div>
-                                    <h3 class="heading mt-3 mb-3 text-dark">
-                                        Коньяк классический
-                                    </h3>
-                                    <p>
-                                        
-
-                                        <span class="price"
-                                            >350 р.</span
-                                        >
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="col-lg-4 mb-5 col-md-6">
-                            <div class="wine_v_1 text-center pb-4 pt-5">
-                                <img
-                                    src="images/chacha.png"
-                                    alt="Image"
-                                    class="img-fluid"
-                                />
-                                
-                                <img
-                                    src="assets/profitable.png"
-                                    style="
-                                        width: 10rem;
-                                        height: 10rem;
-                                        position: absolute;
-                                        right: -20px;
-                                        top: -20px;
-                                    "
-                                />
-                                
-
-                                <div>
-                                    <h3 class="heading mt-3 mb-3 text-dark">
-                                        Чача
-                                    </h3>
-                                    <p>
-                                        
-
-                                        <span class="price"
-                                            >299 р.</span
-                                        >
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="col-lg-4 mb-5 col-md-6">
-                            <div class="wine_v_1 text-center pb-4 pt-5">
-                                <img
-                                    src="images/konyak_kizilovyi.png"
-                                    alt="Image"
-                                    class="img-fluid"
-                                />
-                                
-
-                                <div>
-                                    <h3 class="heading mt-3 mb-3 text-dark">
-                                        Коньяк кизиловый
-                                    </h3>
-                                    <p>
-                                        
-
-                                        <span class="price"
-                                            >350 р.</span
-                                        >
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                        
-                    </div>
-                    
-                    <di class="row">
-                        <div class="col-12 section-title text-center mb-5">
-                            <h2 class="d-block">Красные вина</h2>
-                        </div>
-                    </di>
-
-                    <div class="row">
-                        
-                        <div class="col-lg-4 mb-5 col-md-6">
-                            <div class="wine_v_1 text-center pb-4 pt-5">
-                                <img
-                                    src="images/chernyi_lekar.png"
-                                    alt="Image"
-                                    class="img-fluid"
-                                />
-                                
-
-                                <div>
-                                    <h3 class="heading mt-3 mb-3 text-dark">
-                                        Черный лекарь
-                                    </h3>
-                                    <p>
-                                         Качич<br />
-                                        
-
-                                        <span class="price"
-                                            >399 р.</span
-                                        >
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="col-lg-4 mb-5 col-md-6">
-                            <div class="wine_v_1 text-center pb-4 pt-5">
-                                <img
-                                    src="images/hvanchkara.png"
-                                    alt="Image"
-                                    class="img-fluid"
-                                />
-                                
-
-                                <div>
-                                    <h3 class="heading mt-3 mb-3 text-dark">
-                                        Хванчкара
-                                    </h3>
-                                    <p>
-                                         Александраули<br />
-                                        
-
-                                        <span class="price"
-                                            >550 р.</span
-                                        >
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="col-lg-4 mb-5 col-md-6">
-                            <div class="wine_v_1 text-center pb-4 pt-5">
-                                <img
-                                    src="images/kindzmarauli.png"
-                                    alt="Image"
-                                    class="img-fluid"
-                                />
-                                
-
-                                <div>
-                                    <h3 class="heading mt-3 mb-3 text-dark">
-                                        Киндзмараули
-                                    </h3>
-                                    <p>
-                                         Саперави<br />
-                                        
-
-                                        <span class="price"
-                                            >550 р.</span
-                                        >
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                        
-                    </div>
-                    
+                    {% endfor %}
                 </div>
             </div>
 
@@ -450,7 +223,7 @@
                         <div class="col-md-8">
                             <h2 style="font-size: 3rem">проверено временем</h2>
                             <span class="sub-title" style="font-size: 2.5rem"
-                                >Уже  года с вами</span
+                                >Уже {{service_years}} года с вами</span
                             >
                         </div>
                     </div>
