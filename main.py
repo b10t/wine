@@ -5,12 +5,10 @@ from http.server import HTTPServer, SimpleHTTPRequestHandler
 import pandas
 from jinja2 import Environment, FileSystemLoader, select_autoescape
 
-excel_data_df = pandas.read_excel(
-    'wine3.xlsx',
-    na_values=['N/A', 'NA'],
-    keep_default_na=False
-)
-wines = excel_data_df.to_dict(orient='records')
+wines = pandas.read_excel('wine3.xlsx',
+                          na_values=['N/A', 'NA'],
+                          keep_default_na=False) \
+    .to_dict(orient='records')
 
 drinks = defaultdict(list)
 
