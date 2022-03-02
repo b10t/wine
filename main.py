@@ -6,6 +6,7 @@ import pandas
 from environs import Env
 from jinja2 import Environment, FileSystemLoader, select_autoescape
 
+WINERY_OPENING_YEAR = 1920
 
 if __name__ == '__main__':
     env = Env()
@@ -27,7 +28,7 @@ if __name__ == '__main__':
         autoescape=select_autoescape(['html', 'xml'])
     )
 
-    winery_age = datetime.datetime.now().year - 1920
+    winery_age = datetime.datetime.now().year - WINERY_OPENING_YEAR
 
     template = env.get_template('template.html')
 
