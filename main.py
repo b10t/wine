@@ -27,11 +27,14 @@ if __name__ == '__main__':
         autoescape=select_autoescape(['html', 'xml'])
     )
 
-    service_years = datetime.datetime.now().year - 1920
+    winery_age = datetime.datetime.now().year - 1920
 
     template = env.get_template('template.html')
 
-    rendered_page = template.render(grouped_drinks=grouped_drinks)
+    rendered_page = template.render(
+        grouped_drinks=grouped_drinks,
+        winery_age=winery_age
+    )
 
     with open('index.html', 'w', encoding="utf8") as file:
         file.write(rendered_page)
