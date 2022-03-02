@@ -11,7 +11,7 @@ WINERY_OPENING_YEAR = 1920
 if __name__ == '__main__':
     env = Env()
     env.read_env()
-    data_file = env.str('DATA_FILE', 'wine3.xlsx')
+    data_file = env.str('DATA_FILE', 'sample_data.xlsx')
 
     wines = pandas.read_excel(data_file,
                               na_values=['N/A', 'NA'],
