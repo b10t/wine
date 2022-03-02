@@ -113,14 +113,14 @@
                         </p>
                     </div>
                 </di>
-                {% for drink_category in drinks %}
+                {% for drink_category in grouped_drinks %}
                 <di class="row">
                     <div class="col-12 section-title text-center mb-5">
                         <h2 class="d-block">{{drink_category}}</h2>
                     </div>
                 </di>
                 <div class="row">
-                    {% for drink in drinks[drink_category] %}
+                    {% for drink in grouped_drinks[drink_category] %}
                     <div class="col-lg-4 mb-5 col-md-6">
                         <div class="wine_v_1 text-center pb-4 pt-5">
                             <img src="images/{{drink.Картинка}}" alt="Image" class="img-fluid" />

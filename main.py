@@ -17,10 +17,10 @@ if __name__ == '__main__':
                               keep_default_na=False) \
         .to_dict(orient='records')
 
-    drinks = defaultdict(list)
+    grouped_drinks = defaultdict(list)
 
     for wine in wines:
-        drinks[wine['Категория']].append(wine)
+        grouped_drinks[wine['Категория']].append(wine)
 
     env = Environment(
         loader=FileSystemLoader('.'),
@@ -31,7 +31,7 @@ if __name__ == '__main__':
 
     template = env.get_template('template.html')
 
-    rendered_page = template.render(drinks=drinks)
+    rendered_page = template.render(grouped_drinks=grouped_drinks)
 
     with open('index.html', 'w', encoding="utf8") as file:
         file.write(rendered_page)
