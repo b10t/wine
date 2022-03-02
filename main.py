@@ -11,9 +11,9 @@ WINERY_OPENING_YEAR = 1920
 if __name__ == '__main__':
     env = Env()
     env.read_env()
-    data_file = env.str('DATA_FILE', 'sample_data.xlsx')
+    path_data_file = env.str('DATA_FILE', 'sample_data.xlsx')
 
-    wines = pandas.read_excel(data_file,
+    wines = pandas.read_excel(path_data_file,
                               na_values=['N/A', 'NA'],
                               keep_default_na=False) \
         .to_dict(orient='records')
